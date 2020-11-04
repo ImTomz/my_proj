@@ -1,5 +1,6 @@
 * {
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   margin: 0;
   padding: 0;
   font-family: Arial, Helvetica, sans-serif;
@@ -12,37 +13,71 @@
   background-color: #000;
 }
 
-.intro nav {
+#burger-container {
   position: fixed;
-  display: flex;
-  justify-content: space-around;
-  color: #fff;
   z-index: 10;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 7vh;
-  align-items: center;
+  top: 10vh;
+  right: 0;
+  width: 150px;
+  height: 60px;
   background-color: #020102;
-}
-
-.intro nav ul {
-  width: 40%;
-  list-style: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: space-around;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  padding-left: 25px;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  border-left: 1px solid ghostwhite;
+  border-top: 1px solid ghostwhite;
+  border-bottom: 1px solid ghostwhite;
+  border-top-left-radius: 34.5px 30px;
+  border-bottom-left-radius: 34.5px 30px;
 }
 
-.intro nav ul li a {
-  color: #fff;
-  text-decoration: none;
+#burger-container #burger {
+  width: 30px;
+  height: 30px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  cursor: pointer;
+}
+
+#burger-container #burger .line {
+  width: 25px;
+  height: 3px;
+  margin-bottom: 5px;
+  background-color: #fff;
+}
+
+#burger-container #burger .line:last-child {
+  margin-bottom: 0;
 }
 
 .intro video,
 .outro video {
   width: 100%;
   height: 100vh;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 .intro .scrollDownTxt,
@@ -50,7 +85,8 @@
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
   font-size: 80px;
   color: #fff;
 }
@@ -64,3 +100,4 @@ main header {
   background-color: #020102;
   color: #fff;
 }
+/*# sourceMappingURL=Style.css.map */

@@ -2,9 +2,10 @@ const intro = document.querySelector('.intro');
 const inVideo = intro.querySelector('video');
 const scrollDownTxt = intro.querySelector('.scrollDownTxt');
 const welcomeTxt = document.querySelector('.welcomeMsg');
-const navBar = intro.querySelector('nav')
+const burger = intro.querySelector('#burger-container')
 const outro= document.querySelector('.outro')
 const outVideo = outro.querySelector('video')
+const mainContent = document.querySelector('main')
 
 //Timeline for text animation in intro
 const tl = new TimelineMax({ onUpdate: updatePercentage }); //Timeline on scroll update
@@ -13,11 +14,11 @@ const tl2 = new TimelineMax({ onUpdate: updatePercentage }); //Timeline on scrol
 
 //Timeline animation for intro
 tl.fromTo(scrollDownTxt,0.3,{opacity: 1},{opacity: 0})
-  .from(welcomeTxt,1,{opacity:0},1)
-  .from(navBar,1,{opacity:0, pointerEvents: 'none'},"-=1")
+  .from(welcomeTxt,.5,{opacity:0},1)
+  .fromTo(burger,0.4,{right: -150, pointerEvents: 'none'},{right: 0, pointerEvents: 'all'},"-=1")
 
 //Timeline animation for outro
-tl2.to(navBar,0.1,{opacity:0,pointerEvents: 'none'},"-=1")
+tl2.to(burger,0.2,{right: -150,pointerEvents: 'none'},"-=1")
 
 //Scene cotroller for scrolling effects
 const controller = new ScrollMagic.Controller();
@@ -55,7 +56,7 @@ scene.on("update", e => {
 });
 // Updating scrollpos for outro video
 scene2.on("update", e => {
-  scrollposOutro = (e.scrollPos - (1000 + document.querySelector('main').scrollHeight) - 1000) / 1000
+  scrollposOutro = (e.scrollPos - (1000 + mainContent.scrollHeight ) - 1000) / 1000
 })
 
 // Interval for intro
